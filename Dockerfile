@@ -1,4 +1,4 @@
-ARG version=1.14.3
+ARG version=1.14.4
 ARG file=dogecoin-${version}-x86_64-linux-gnu.tar.gz
 ARG folder=dogecoin-${version}
 
@@ -18,4 +18,4 @@ ARG folder
 COPY --from=stage1 /the/workdir/${folder}/bin/dogecoind /app/dogecoind
 VOLUME /data
 EXPOSE 22555
-ENTRYPOINT [ "/app/dogecoind", "-printtoconsole", "-datadir=/data", "-server", "-rpcport=22555", "-rpcuser=dogecoin", "-rpcpassword=password" ]
+ENTRYPOINT [ "/app/dogecoind", "-printtoconsole", "-datadir=/data", "-server", "-rpcport=22555" ]
