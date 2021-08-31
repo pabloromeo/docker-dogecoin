@@ -15,7 +15,7 @@ RUN \
   tar -vxf dogecoin-${version}-${DOWNLOAD_ARCH}.tar.gz && \
   chmod +x /the/workdir/dogecoin-${version}/bin/dogecoind
 
-FROM alpine
+FROM debian:stable
 ARG version
 COPY --from=stage1 /the/workdir/dogecoin-${version}/bin/dogecoind /app/dogecoind
 VOLUME /data
