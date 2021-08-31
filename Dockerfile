@@ -2,6 +2,7 @@ ARG version=1.14.4
 
 FROM --platform=${BUILDPLATFORM} debian:stable as stage1
 ARG version
+ARG TARGETPLATFORM
 WORKDIR /the/workdir
 RUN \ 
   case ${TARGETPLATFORM} in \
@@ -15,6 +16,7 @@ RUN \
   chmod +x /the/workdir/dogecoin-${version}/bin/dogecoind
 
 FROM photon
+ARG version
 COPY --from=stage1 /the/workdir/dogecoin-${version}/bin/dogecoind /app/dogecoind
 VOLUME /data
 EXPOSE 22555
