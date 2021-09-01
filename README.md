@@ -1,20 +1,30 @@
 # docker-dogecoin
-![loc](https://sloc.xyz/github/nektro/docker-dogecoin)
-[![license](https://img.shields.io/github/license/nektro/docker-dogecoin.svg)](https://github.com/nektro/docker-dogecoin/blob/master/LICENSE)
-[![discord](https://img.shields.io/discord/551971034593755159.svg?logo=discord)](https://discord.gg/P6Y4zQC)
-[![docker_pulls](https://img.shields.io/docker/pulls/nektro/docker-dogecoin)](https://hub.docker.com/r/nektro/docker-dogecoin)
-[![docker_stars](https://img.shields.io/docker/stars/nektro/docker-dogecoin)](https://hub.docker.com/r/nektro/docker-dogecoin)
+[![license](https://img.shields.io/github/license/pabloromeo/docker-dogecoin.svg)](https://github.com/pabloromeo/docker-dogecoin/blob/master/LICENSE)
 
-Dockerized Litecoin Daemon
+Dockerized Dogecoin Daemon
+
+Multi-arch builds for **linux/amd64** and **linux/arm/v7**
+
 
 https://dogecoin.com/
 
 https://github.com/dogecoin/dogecoin/releases
 
-| Key | Value |
+| Version | Tag |
 |-----|-------|
-| Version | `1.14.2` |
-| Volume | `/data` |
-| RPC Port | `22555` |
-| RPC User | `dogecoin` |
-| RPC Pass | `password` |
+| `1.14.4` | ghcr.io/pabloromeo/dogecoin:v1.14.4 |
+| `1.14.3` | ghcr.io/pabloromeo/dogecoin:v1.14.3 |
+
+### Docker Compose:
+```yaml
+version: '3.4'
+
+services:
+  dogenode:
+    image: ghcr.io/pabloromeo/dogecoin:v1.14.4
+    volumes:
+      - /yourpath:/data
+    ports:
+      - "22556:22556/tcp"
+      - "22556:22556/udp"
+```
