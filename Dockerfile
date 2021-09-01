@@ -1,4 +1,4 @@
-ARG version=1.14.4
+ARG version=1.14.3
 
 FROM --platform=${BUILDPLATFORM} debian:stable as stage1
 ARG version
