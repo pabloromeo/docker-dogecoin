@@ -12,6 +12,7 @@ https://github.com/dogecoin/dogecoin/releases
 
 | Version | Tag |
 |-----|-------|
+| `1.14.5` | ghcr.io/pabloromeo/dogecoin:v1.14.5 |
 | `1.14.4` | ghcr.io/pabloromeo/dogecoin:v1.14.4 |
 | `1.14.3` | ghcr.io/pabloromeo/dogecoin:v1.14.3 |
 
@@ -21,7 +22,7 @@ version: '3.4'
 
 services:
   dogenode:
-    image: ghcr.io/pabloromeo/dogecoin:v1.14.4
+    image: ghcr.io/pabloromeo/dogecoin:v1.14.5
     volumes:
       - /yourpath:/data
     ports:
